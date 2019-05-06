@@ -22,6 +22,12 @@
     
     ![blockchain](https://github.com/huaxueyihao/concurrent-study/blob/master/concurrent-demo01/src/main/resources/first-image/Jietu20190506-212547.jpg "线程生命周期")
     
+    小结：
+    1、main函数是一个线程，
+    2、创建线程，复写run方法，调用start启动
+    3、JVM启动后，实际上至少由多个线程，至少有一个非守护线程
+    4、当调用一个线程start方法的时候，此时至少有两个线程，一个是调用你的线程，还有一个是组线程
+    5、线程生命周期：new、runnable、running、block、termate
 
 ### 4 Runnable接口介绍
 

@@ -2,7 +2,7 @@ package com.concurrent.concurrent_four_state.first.chapter1;
 
 /**
  * @Description:
- * @Author: maoruiquan
+ * @Author: huaxueyihao
  * @Date:
  * @Version:
  **/
