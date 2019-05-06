@@ -17,6 +17,8 @@
     4、被阻塞（blocked），running状态调用sleep，wait等进入阻塞状态，blocked状态必须进过runnable状态才能进入running状态
     5、结束（terminated）（2、3、4都有可能进入死亡状态）
     
+    ![blockchain](https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/
+    u=702257389,1274025419&fm=27&gp=0.jpg "区块链")
     
 
 ###4 Runnable接口介绍
