@@ -3,9 +3,21 @@
     进程：具有一定队里的程序关数据集合上的一次运行活动，进程是系统进行资源分配和调度的一个独立单位
     
 ###2 线程创建启动线程
+    Thread t = new Thread(){
+        public void run(){
+            // run code
+        }
+    };
+    t.start();
 
-
-###3 线程声明周期
+###3 线程生命周期
+    1、创建线程(Thread t = new Thread())
+    2、启动线程(t.start())，可执行状态(runnable)
+    3、cpu调度，拿到执行权(running)
+    4、被阻塞（blocked），running状态调用sleep，wait等进入阻塞状态，blocked状态必须进过runnable状态才能进入running状态
+    5、结束（terminated）（2、3、4都有可能进入死亡状态）
+    
+    
 
 ###4 Runnable接口介绍
 
