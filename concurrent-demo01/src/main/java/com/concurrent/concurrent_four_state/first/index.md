@@ -31,7 +31,19 @@
 
 ### 4 Runnable接口介绍
 
+    new Thread(new Runnable(){
+        
+        @override
+        public void run(){
+            // run
+        }
+    }).start();
+    策略模式
+
 ### 5 Thread API详细介绍
+    1、守护线程可以做心跳检测
+    2、join()
+    
 
 ### 6 线程同步、锁技术
 
