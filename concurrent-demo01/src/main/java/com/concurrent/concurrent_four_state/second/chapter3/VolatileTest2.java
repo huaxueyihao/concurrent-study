@@ -36,7 +36,6 @@ public class VolatileTest2 {
                }
            }
         },"UPDATER").start();
-
     }
 
 
