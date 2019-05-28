@@ -35,5 +35,16 @@ public class AtomicIntegerFieldUpdaterTest {
         volatile int i;
     }
 
+    /**
+     * 1.想让类的属性操作军备原子性
+     *   1.1 volatile
+     *   1.2 非private，protected
+     *   1.3 类型必须一致
+     *   1.4 其他
+     * 2. 不想使用锁（包括显示锁或）
+     *
+     *
+     */
+
 
 }
