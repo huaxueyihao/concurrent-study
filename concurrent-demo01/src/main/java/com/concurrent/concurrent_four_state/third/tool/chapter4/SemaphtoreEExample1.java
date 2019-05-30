@@ -16,7 +16,6 @@ public class SemaphtoreEExample1 {
 
         final SemaphoreLock semaphoreLock = new SemaphoreLock();
 
-
         for (int i = 0; i < 2; i++) {
             new Thread(){
                 @Override
