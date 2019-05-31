@@ -27,21 +27,28 @@ public class ReentrantLockExample {
 //            }
 //        }.start());
 
-        Thread thread = new Thread(() -> testUnInteeruptibly());
+//        Thread thread = new Thread(() -> testUnInteeruptibly());
+//        thread.start();
+//
+//        TimeUnit.SECONDS.sleep(1);
+//        Thread thread2 = new Thread(() -> testUnInteeruptibly());
+//        thread2.start();
+
+
+        Thread thread = new Thread(() -> testTryLock());
         thread.start();
 
         TimeUnit.SECONDS.sleep(1);
-        Thread thread2 = new Thread(() -> testUnInteeruptibly());
+        Thread thread2 = new Thread(() -> testTryLock());
         thread2.start();
-
 
     }
 
-    public static void testUnInteeruptibly(){
-        try{
+    public static void testUnInteeruptibly() {
+        try {
             lock.lock();
-            Optional.of("The thread-"+Thread.currentThread().getName()+" get lock and willing do working.").ifPresent(System.out::println);
-            while (true){
+            Optional.of("The thread-" + Thread.currentThread().getName() + " get lock and willing do working.").ifPresent(System.out::println);
+            while (true) {
 
             }
 
@@ -50,10 +57,10 @@ public class ReentrantLockExample {
         }
     }
 
-    public static void needLock(){
-        try{
+    public static void needLock() {
+        try {
             lock.lock();
-            Optional.of("The thread-"+Thread.currentThread().getName()+" get lock and willing do working.").ifPresent(System.out::println);
+            Optional.of("The thread-" + Thread.currentThread().getName() + " get lock and willing do working.").ifPresent(System.out::println);
             TimeUnit.SECONDS.sleep(5);
 
 
@@ -64,8 +71,25 @@ public class ReentrantLockExample {
         }
     }
 
-    public static void needLockBySync(){
-        synchronized (ReentrantLockExample.class){
+    private static void testTryLock() {
+        if (lock.tryLock()) {
+            try {
+                Optional.of("The thread-"+Thread.currentThread().getName()+" get lock and will do working ").ifPresent(System.out::println);
+                while (true){
+
+                }
+
+            } finally {
+                lock.unlock();
+            }
+        }else {
+            Optional.of("The thread-"+Thread.currentThread().getName()+" don't get lock ").ifPresent(System.out::println);
+        }
+
+    }
+
+    public static void needLockBySync() {
+        synchronized (ReentrantLockExample.class) {
 
             try {
                 TimeUnit.SECONDS.sleep(10);
@@ -76,7 +100,6 @@ public class ReentrantLockExample {
         }
 
     }
-
 
 
 }
