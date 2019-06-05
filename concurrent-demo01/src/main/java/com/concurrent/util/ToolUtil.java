@@ -21,9 +21,11 @@ public class ToolUtil {
                     TimeUnit.HOURS.sleep(time);
                     break;
                 case MINUTES:
-                    TimeUnit.MILLISECONDS.sleep(time);
+                    TimeUnit.MINUTES.sleep(time);
                 case SECONDS:
                     TimeUnit.SECONDS.sleep(time);
+                case MILLISECONDS:
+                    TimeUnit.MILLISECONDS.sleep(time);
 
             }
         } catch (InterruptedException e) {
